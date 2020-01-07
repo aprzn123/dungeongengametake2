@@ -1,0 +1,58 @@
+a = [
+    function1
+    function2
+    function3
+    function4
+]
+b = [
+    key1: function1
+    key2: function2
+    key3: function3
+]
+when key pressed:
+    check b[key]
+    execute it
+when customizing keys:
+reverse b:
+b = [
+    function1: key1
+    function2: key2
+    function3: key3
+]
+check for missing functions (b missing function4)
+b = [
+    function1: key1
+    function2: key2
+    function3: key3
+    function4: keyNA
+]
+player assigns key2 for function4
+fn_tmp = function4
+k_tmp = key2
+check if key2 in values of b, set it to 0
+b = [
+    function1: key1
+    function2: keyNA
+    function3: key3
+    function4: keyNA
+]
+assign k_tmp to fn_tmp
+b = [
+    function1: key1
+    function2: keyNA
+    function3: key3
+    function4: key2
+]
+when done:
+    remove all keyNA
+    b = [
+        function1: key1
+        function3: key3
+        function4: key2
+    ]
+reverse
+b = [
+    key1: function1
+    key3: function3
+    key2: function4
+]
