@@ -33,3 +33,5 @@ class CompositeSurface:
                     "coords": coords
                 }
             )
+    def get_surface(self):
+        return self.base_surface
