@@ -19,6 +19,7 @@ class CompositeSurface:
                 "size": self.size
             }
         )
+        self.base_surface.convert()
         
         self.update()
 
