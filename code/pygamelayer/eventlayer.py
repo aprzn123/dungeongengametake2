@@ -7,7 +7,7 @@ from code.datashare import gamequit
 
 class Event:
     def __init__(self, event):
-        # TODO: Make this interpret pygame event
+        # TODO: Make it interpret args
         try:
             self.ev = {
                 ACTIVEEVENT: Events.ACTIVEEVENT,
