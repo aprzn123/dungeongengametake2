@@ -18,4 +18,4 @@ type == VIDEORESIZE:
 type == VIDEOEXPOSE:
     # TODO: idk how this works yet
 type == USEREVENT:
-    Unused for now, probably not ever`
+    Unused for now, probably not ever
