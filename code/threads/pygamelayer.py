@@ -20,13 +20,16 @@ def pygame_layer():
         args = ni.args
         inst = ni.inst
 
-        #long if statement do do different things depending on the instruction given.
+        # long if statement do do different things depending on the instruction given.
         if inst == Instructions.BLIT:
             args["onto"].blit(args["onfrom"], args["coords"])
         elif inst == Instructions.NEW_SURFACE:
             ret_val = pygame.Surface(args["size"])
 
         ni.resolve(ret_val)
+
+        # direct events to destinations
+        evl.direct_events()
 
         if game_quit:
             pygame.quit()

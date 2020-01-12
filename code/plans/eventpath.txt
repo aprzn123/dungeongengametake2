@@ -10,11 +10,11 @@ type == KEYDOWN or KEYUP:
 type == MOUSEMOTION:
     Unused for now
 type == MOUSEBUTTONDOWN or MOUSEBUTTONUP:
-    Probably also sent to key handler, see KEYDOWN/KEYUP
+    Probably also sent to key handler, see § KEYDOWN/KEYUP
 type == JOYAXISMOTION or JOYBALLMOTION or JOYHATMOTION or JOYBUTTONUP or JOYBUTTONDOWN:
     Unused for now
 type == VIDEORESIZE:
-    Sent to graphics code
+    Unused for now, probably not ever
 type == VIDEOEXPOSE:
     # TODO: idk how this works yet
 type == USEREVENT:

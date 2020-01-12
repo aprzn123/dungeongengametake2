@@ -7,7 +7,6 @@ from code.datashare import gamequit
 
 class Event:
     def __init__(self, event):
-        # TODO: Make it interpret args
         try:
             self.ev = {
                 ACTIVEEVENT: Events.ACTIVEEVENT,
@@ -25,10 +24,34 @@ class Event:
                 VIDEOEXPOSE: Events.VIDEOEXPOSE,
                 USEREVENT: Events.USEREVENT
             }[event.type]
-        except:
-            print(f'ERROR: EVENT OF TYPE {event.type} NOT RECOGNIZED')
+        except KeyError:
+            print(f'FATAL: EVENT OF TYPE {event.type} NOT RECOGNIZED')
             gamequit.game_quit = True
-        self.args = None
+        self.args = {}
+        if ev == Events.ACTIVEEVENT:
+            args = {'gain': event.gain, 'state': event.state}
+        elif ev == Events.KEYDOWN:
+            args = {'key': event.key, 'mod': event.mod, 'unicode': event.unicode, 'scancode': event.scancode}
+        elif ev == Events.KEYUP:
+            args = {'key': event.key, 'mod': event.mod}
+        elif ev == Events.MOUSEMOTION:
+            args = {'pos': event.pos, 'rel': event.rel, 'buttons': event.buttons}
+        elif ev == Events.MOUSEBUTTONDOWN:
+            args = {'pos': event.pos, 'button': event.button}
+        elif ev == Events.MOUSEBUTTONUP:
+            args = {'pos': event.pos, 'button': event.button}
+        elif ev == Events.JOYAXISMOTION:
+            pass
+        elif ev == Events.JOYBALLMOTION:
+            pass
+        elif ev == Events.JOYHATMOTION:
+            pass
+        elif ev == Events.JOYBUTTONDOWN:
+            pass
+        elif ev == Events.JOYBUTTONUP:
+            pass
+        elif ev == Events.VIDEORESIZE:
+            args == {'size': event.size, 'w': event.w, 'h': event.h}
 
 class EventLayer:
     def __init__(self):
@@ -36,5 +59,13 @@ class EventLayer:
     
     def put_event(self, event):
         self.events.put(Event(event))
+
+    # TODO: Write event direction code
+    def direct_event(self, event):
+        if event.ev == Events.ACTIVEEVENT:
+            pass
+    
+    def direct_events(self):
+        pass
 
 evl = EventLayer()
