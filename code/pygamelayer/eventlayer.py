@@ -4,6 +4,7 @@ from pygame.locals import *
 
 from code.enums.events import Events
 from code.datashare import gamequit
+from code.inputhandling.intakequeue import eiq
 
 class Event:
     def __init__(self, event):
@@ -28,6 +29,9 @@ class Event:
             print(f'FATAL: EVENT OF TYPE {event.type} NOT RECOGNIZED')
             gamequit.game_quit = True
         self.args = {}
+
+        ev = self.ev
+
         if ev == Events.ACTIVEEVENT:
             args = {'gain': event.gain, 'state': event.state}
         elif ev == Events.KEYDOWN:
@@ -53,6 +57,7 @@ class Event:
         elif ev == Events.VIDEORESIZE:
             args == {'size': event.size, 'w': event.w, 'h': event.h}
 
+
 class EventLayer:
     def __init__(self):
         events = Queue()
@@ -60,12 +65,36 @@ class EventLayer:
     def put_event(self, event):
         self.events.put(Event(event))
 
-    # TODO: Write event direction code
-    def direct_event(self, event):
-        if event.ev == Events.ACTIVEEVENT:
+    def direct_event(self):
+        event = self.events.get()
+        ev = event.ev
+        if ev == Events.ACTIVEEVENT:
+            pass
+        elif ev == Events.KEYDOWN:
+            pass
+        elif ev == Events.KEYUP:
+            pass
+        elif ev == Events.MOUSEMOTION:
+            pass
+        elif ev == Events.MOUSEBUTTONDOWN:
+            pass
+        elif ev == Events.MOUSEBUTTONUP:
+            pass
+        elif ev == Events.JOYAXISMOTION:
+            pass
+        elif ev == Events.JOYBALLMOTION:
+            pass
+        elif ev == Events.JOYHATMOTION:
+            pass
+        elif ev == Events.JOYBUTTONDOWN:
+            pass
+        elif ev == Events.JOYBUTTONUP:
+            pass
+        elif ev == Events.VIDEORESIZE:
             pass
     
     def direct_events(self):
         pass
+
 
 evl = EventLayer()

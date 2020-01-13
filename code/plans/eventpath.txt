@@ -4,7 +4,7 @@ Caught by pygamelayer and sent to instructionlayer
 Converted from pygame format to custom Instruction class
 Sent to a different handler depending on the EventType
 type == ACTIVEEVENT:
-    # TODO: idk how this works yet
+    Unused for now
 type == KEYDOWN or KEYUP:
     Sent to a key handler described by ./keybindings.txt
 type == MOUSEMOTION:
@@ -16,6 +16,6 @@ type == JOYAXISMOTION or JOYBALLMOTION or JOYHATMOTION or JOYBUTTONUP or JOYBUTT
 type == VIDEORESIZE:
     Unused for now, probably not ever
 type == VIDEOEXPOSE:
-    # TODO: idk how this works yet
+    Unused for now, probably not ever
 type == USEREVENT:
     Unused for now, probably not ever
