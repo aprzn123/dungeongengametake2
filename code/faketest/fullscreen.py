@@ -10,4 +10,6 @@ while True:
             quit()
         elif event.type == pygame.ACTIVEEVENT:
             print(f'Gain: {event.gain} | State: {event.state}')
+        elif event.type == pygame.KEYDOWN:
+            print(f'Key: {event.key}')
     pygame.display.flip()

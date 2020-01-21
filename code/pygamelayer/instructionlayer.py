@@ -1,4 +1,4 @@
-from queue import Queue
+from queue import Queue, Empty
 
 from code.enums.instructions import Instructions
 
@@ -55,7 +55,7 @@ class InstructionLayer:
     def grab_inst(self):
         try:
             inst = self.instructions.get_nowait()
-        except:
+        except Empty:
             inst = Instruction(Instructions.NULL_INST, {})
         return inst
 
