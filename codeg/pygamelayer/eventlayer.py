@@ -2,9 +2,9 @@ from queue import Queue
 
 from pygame.locals import *
 
-from code.enums.events import Events
-from code.datashare import gamequit
-from code.inputhandling.intakequeue import eiq
+from codeg.enums.events import Events
+from codeg.datashare import gamequit
+from codeg.inputhandling.intakequeue import eiq
 
 class Event:
     def __init__(self, event):

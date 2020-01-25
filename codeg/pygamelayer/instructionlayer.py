@@ -1,6 +1,6 @@
 from queue import Queue, Empty
 
-from code.enums.instructions import Instructions
+from codeg.enums.instructions import Instructions
 
 class Instruction:
     def __init__(self, inst, args):
@@ -8,7 +8,7 @@ class Instruction:
         initializes a return value, and assigns other variables.
         
         Arguments:
-            inst {code.enums.instructions.Instructions} -- Instruction
+            inst {codeg.enums.instructions.Instructions} -- Instruction
             args {dict} -- Arguments given to the instruction
         """        
         self.inst = inst
@@ -48,7 +48,7 @@ class InstructionLayer:
         an id for internal use.
         
         Arguments:
-            inst {code.pygamelayer.instructionlayer.Instruction} -- Instruction to be added
+            inst {codeg.pygamelayer.instructionlayer.Instruction} -- Instruction to be added
         """
         self.instructions.put(inst)
 
@@ -63,7 +63,7 @@ class InstructionLayer:
         """Runs given instruction with given args and returns its return value.
         
         Arguments:
-            inst {code.enums.instructions.Instructions} -- enum for which instruction to be executed
+            inst {codeg.enums.instructions.Instructions} -- enum for which instruction to be executed
             args {dict} -- arguments passed to instruction
         
         Returns:
@@ -79,7 +79,7 @@ class InstructionLayer:
         """Runs instruction with given args without returning anything.
         
         Arguments:
-            inst {code.enums.instructions.Instructions} -- enum for which instruction to be executed
+            inst {codeg.enums.instructions.Instructions} -- enum for which instruction to be executed
             args {dict} -- arguments passed to instruction
         """        
         tbr = Instruction(inst, args) # again, tbr stands for "to be run"

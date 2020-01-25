@@ -1,9 +1,9 @@
 import pygame
 
-from code.pygamelayer.instructionlayer import instl
-from code.pygamelayer.eventlayer import evl
-from code.datashare.gamequit import game_quit
-from code.enums.instructions import Instructions
+from codeg.pygamelayer.instructionlayer import instl
+from codeg.pygamelayer.eventlayer import evl
+from codeg.datashare.gamequit import game_quit
+from codeg.enums.instructions import Instructions
 
 def pygame_layer():
     pygame.init()

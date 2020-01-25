@@ -1,5 +1,5 @@
-from code.pygamelayer.instructionlayer import instl
-from code.enums.instructions import Instructions
+from codeg.pygamelayer.instructionlayer import instl
+from codeg.enums.instructions import Instructions
 
 class CompositeSurface:
     def __init__(self, surfaces, size):
